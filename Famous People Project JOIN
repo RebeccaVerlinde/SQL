@@ -1,0 +1,39 @@
+--Created a about actors and their most famous movie.
+
+CREATE TABLE movie_stars (id INTEGER PRIMARY KEY AUTOINCREMENT, first_name TEXT, last_name TEXT, profession TEXT, famous_movie TEXT, relationship_status TEXT, fictional_character TEXT);
+
+INSERT INTO movie_stars (first_name, last_name, profession, famous_movie, relationship_status, fictional_character)
+VALUES ("Tom", "Hanks", "actor", "you've got mail", "married", "Joe Fox");
+INSERT INTO movie_stars (first_name, last_name, profession, famous_movie, relationship_status, fictional_character)
+VALUES ("meg", "ryan", "actress", "you've got mail", "divorced", "Kate Kelly");
+INSERT INTO movie_stars (first_name, last_name, profession, famous_movie, relationship_status, fictional_character)
+VALUES ("Jessica", "Alba", "actress", "Valentine's Day", "married", "morley");
+INSERT INTO movie_stars (first_name, last_name, profession, famous_movie, relationship_status, fictional_character)
+VALUES ("Johnny", "Depp", "actor", "Sweeney Todd", "divored", "Sweeney Todd");
+INSERT INTO movie_stars (first_name, last_name, profession, famous_movie, relationship_status, fictional_character)
+VALUES ("Jamie", "Campbell Bower", "actor singer", "Mortal Instruments", "single", "Jace Wayland");
+INSERT INTO movie_stars (first_name, last_name, profession, famous_movie, relationship_status, fictional_character)
+VALUES ("Robert", "Sheehan", "actor", "Mortal Instruments", "single", "Simon Lewis");
+INSERT INTO movie_stars (first_name, last_name, profession, famous_movie, relationship_status, fictional_character)
+VALUES ("Patrick", "Swayze", "actor", "Dirty Dancing", "married", "Johnny Castle");
+INSERT INTO movie_stars (first_name, last_name, profession, famous_movie, relationship_status, fictional_character)
+VALUES ("Audrey", "Hepburn", "actress", "Roman Holiday", "divorced", "Princess Anne");
+
+--Created a table about singers and a song that they sang.
+
+CREATE TABLE singers (id INTEGER PRIMARY KEY AUTOINCREMENT, first_name TEXT, last_name TEXT, relationship_status TEXT, famous_song TEXT, made_music_for INTEGER);
+
+INSERT INTO singers (first_name, last_name, relationship_status, famous_song, made_music_for) VALUES ("Taylor", "Swift", "engaged", "all too well", 3);
+INSERT INTO singers (first_name, last_name, relationship_status, famous_song, made_music_for) VALUES ("Joe", "Jonas", "married", "cake by the ocean", 2);
+INSERT INTO singers (first_name, last_name, relationship_status, famous_song, made_music_for) VALUES ("Dolly", "Parton", "married", "nine to five", 1);
+INSERT INTO singers (first_name, last_name, relationship_status, famous_song, made_music_for) VALUES ("Ed", "Sheeran", "married", "a team", 4);
+INSERT INTO singers (first_name, last_name, relationship_status, famous_song, made_music_for) VALUES ("Lights", "Bokan", "married", "water and oil", 5);
+INSERT INTO singers (first_name, last_name, relationship_status, famous_song, made_music_for) VALUES ("Miley", "Cyrus", "divorced", "the climb", 6);
+INSERT INTO singers (first_name, last_name, relationship_status, famous_song, made_music_for) VALUES ("Shawn","Mendes", "single", "there's nothing holding me back", 7);
+INSERT INTO singers (first_name, last_name, relationship_status, famous_song, made_music_for) VALUES ("Suzan", "Stortelder", "single", "als het avond is", 8);
+
+--Use of Left Outer Join to join both tables together.
+SELECT movie_stars.first_name, movie_stars.last_name, movie_stars.fictional_character, movie_stars.famous_movie, singers.first_name, singers.last_name FROM movie_stars
+    LEFT OUTER JOIN singers
+    ON movie_stars.id = singers.made_music_for;
+    
