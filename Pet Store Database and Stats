@@ -1,0 +1,25 @@
+--Create a pet store list for SQL.
+CREATE TABLE pet_store (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, aisle INTEGER, animal_type TEXT, price INTEGER);
+
+INSERT INTO pet_store VALUES (1, "dog food", 50, 5, "dog", 30);
+INSERT INTO pet_store VALUES (2, "cat food", 52, 12, "cat", 20);
+INSERT INTO pet_store VALUES (3, "bird food", 27, 17, "bird", 15);
+INSERT INTO pet_store VALUES (4, "turtle food", 30, 30, "turtles", 10);
+INSERT INTO pet_store VALUES (5, "dog bed", 25, 4, "dog", 45);
+INSERT INTO pet_store VALUES (6, "cat tower", 13, 10, "cat", 100);
+INSERT INTO pet_store VALUES (7, "bird cage", 10, 18, "bird", 150);
+INSERT INTO pet_store VALUES (8, "tank", 15, 31, "turtles", 75);
+INSERT INTO pet_store VALUES (9, "dog treats", 137, 5, "dog", 17);
+INSERT INTO pet_store VALUES (10, "cat treats", 95, 12, "cat", 12);
+INSERT INTO pet_store VALUES (11, "water dispenser", 18, 16, "bird", 8);
+INSERT INTO pet_store VALUES (12, "turtle island", 33, 31, "turtles", 33);
+INSERT INTO pet_store VALUES (13, "dog leash", 77, 4, "dog", 50);
+INSERT INTO pet_store VALUES (14, "costume", 111, 9, "cat", 34);
+INSERT INTO pet_store VALUES (15, "rocks", 1000, 31, "turtles", 5);
+INSERT INTO pet_store VALUES (16, "nail clippers", 25, 2, "dog", 13);
+
+--display data in table by price.
+SELECT * FROM pet_store ORDER BY price desc;
+
+--display the total amount of items in each aisle.
+SELECT aisle, SUM(quantity) FROM pet_store GROUP BY aisle
