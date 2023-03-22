@@ -1,0 +1,30 @@
+--Create a table with information from a game app.
+
+CREATE TABLE Township (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, helps INTEGER, level INTEGER); 
+
+INSERT INTO Township (name, helps, level) VALUES ("happy_cow", 45, 77);
+INSERT INTO Township (name, helps, level) VALUES ("croftville", 0, 45);
+INSERT INTO Township (name, helps, level) VALUES ("nerdy_ninja", 47, 63);
+INSERT INTO Township (name, helps, level) VALUES ("tea_pot", 69, 69);
+INSERT INTO Township (name, helps, level) VALUES ("apple_pop", 58, 99);
+INSERT INTO Township (name, helps, level) VALUES ("avaland", 4, 51);
+INSERT INTO Township (name, helps, level) VALUES ("troy", 25, 84);
+SELECT * FROM Township;
+
+--Use of UPDATE to emulate what happens when you edit data in the app.
+UPDATE Township SET helps = 8 WHERE id = 2;
+
+--Visualize updated table.
+SELECT * FROM Township;
+
+--Use of UPDATE to emulate what happens when you edit data in the app.
+UPDATE Township Set helps = 0 WHERE name = "croftville";
+
+--Visualize updated table.
+SELECT * FROM Township;
+
+--Use of DELETE to emulate what happens when you delete data in the app.
+DELETE FROM Township WHERE id = 2;
+
+-Visualize updated table.
+SELECT * FROM Township;
