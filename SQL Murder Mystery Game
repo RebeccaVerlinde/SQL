@@ -1,5 +1,5 @@
 -- There's been a murder in SQL City. It has occurred on Jan 15th, 2018 and it took place in SQL City.
--- I start by retrieving the the corresponding crime scen report from the police dept database.
+-- I start by retrieving the the corresponding crime scene report from the police dept database.
 
 SELECT * FROM crime_scene_report
 WHERE date = "20180115"
@@ -50,7 +50,7 @@ SELECT * FROM get_fit_now_check_in
 WHERE membership_id = "48Z55";
 
 --I ran the query above and it confirmed that Jeremy's membership_id was used on January 9th, just like Annabel said.
---The murder is Jeremy Bowers.
+--The murderer is Jeremy Bowers.
 
 --But wait, there's more... If you think you're up for a challenge, try querying the interview transcript of the murderer to find the real villain behind this crime.
 
